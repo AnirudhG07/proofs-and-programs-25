@@ -11,21 +11,21 @@ Some tests are also included as code that is commented out. If your code is corr
 
 Define an `Int` term eight that is equal to 8.
 -/
-def eight : sorry := sorry
+def eight : Int := 8
 
 /-!
 **Test:** Uncomment the following lines to test your definition.
 -/
--- /--
--- error: type mismatch
---   eight
--- has type
---   Int : Type
--- but is expected to have type
---   Nat : Type
--- -/
--- #guard_msgs in
--- example : Nat := eight
+/--
+error: type mismatch
+  eight
+has type
+  Int : Type
+but is expected to have type
+  Nat : Type
+-/
+#guard_msgs in
+example : Nat := eight
 
 /-#
 ## Simple functions
@@ -33,15 +33,16 @@ def eight : sorry := sorry
 Define two functions `f` and `g` that map a natural number `n` to `2 * n + 1`, using the argument and the λ syntax respectively.
 -/
 
-def f (n: Nat) : Nat := sorry
+def f (n: Nat) : Nat :=
+  2 * n + 1
 
-def g : Nat → Nat := fun n ↦ sorry
+def g : Nat → Nat := fun n ↦ 2 * n + 1
 
 /-!
 **Test:** Uncomment the following lines to test your definition.
 -/
--- example : f 3 = 7 := rfl
--- example : g 3 = 7 := rfl
+example : f 3 = 7 := rfl
+example : g 3 = 7 := rfl
 
 /-!
 ## Curried functions
@@ -50,17 +51,17 @@ Rewrite the functions `h` and `composeSelf` which are in argument form to currie
 -/
 def h (m : Int) (n: Nat) : Int := m - n
 
-def h' : Int → Nat → Int := sorry
+def h' : Int → Nat → Int := fun m ↦ fun n ↦ m - n
 
 def composeSelf (f : Nat → Nat) (n : Nat) : Nat := f (f n)
 
-def composeSelf' : (Nat → Nat) → (Nat → Nat) := sorry
+def composeSelf' : (Nat → Nat) → (Nat → Nat) := fun f ↦ fun n ↦ f (f n)
 
 /-!
 **Test:** Uncomment the following lines to test your definition.
 -/
--- example : h' 5 3 = 2 := rfl
--- example : composeSelf' (fun n ↦ n + 1) 3 = 5 := rfl
+example : h' 5 3 = 2 := rfl
+example : composeSelf' (fun n ↦ n + 1) 3 = 5 := rfl
 
 /-!
 ## Term Proofs
@@ -71,8 +72,8 @@ In the following, prove the result using only the theorems `Nat.le_refl` and `Na
 
 #check Nat.le_step -- ∀ (n m : ℕ), n ≤ m → n ≤ m + 1
 
-example : 3 ≤ 3 := sorry
+example : 3 ≤ 3 := Nat.le_refl 3
 
-example : 3 ≤ 5 := sorry
+example : 3 ≤ 5 := Nat.le_step (Nat.le_step (Nat.le_refl 3))
 
-example (n: Nat) : n ≤ n + 2 := sorry
+example (n: Nat) : n ≤ n + 2 := Nat.le_step (Nat.le_step (Nat.le_refl n))
