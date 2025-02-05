@@ -11,6 +11,9 @@ import PfsProgs25.Unit05.PowerIrrationals
 import PfsProgs25.Unit06.Answer
 import PfsProgs25.Unit06.MyInductives
 import PfsProgs25.Unit07.NatLogic
+import PfsProgs25.Unit08.RecFunction
+import PfsProgs25.Unit09.Trees
+import PfsProgs25.Unit09.Vec
 /-!
 # Proofs and Programs 2025
 
