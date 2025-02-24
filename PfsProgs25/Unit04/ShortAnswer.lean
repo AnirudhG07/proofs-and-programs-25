@@ -12,6 +12,7 @@ We have already seen one special case of inductive types: structures. We will no
 
 inductive ShortAnswer where
 | yes | no | maybe
+deriving Inhabited, Repr, DecidableEq
 
 def ShortAnswer.or (a b : ShortAnswer) : ShortAnswer :=
   match a, b with
@@ -21,6 +22,7 @@ def ShortAnswer.or (a b : ShortAnswer) : ShortAnswer :=
   | maybe, maybe  => maybe
   | no, no => no
   | no, maybe => maybe
+
 
 #eval  ShortAnswer.or .no ShortAnswer.maybe
 
