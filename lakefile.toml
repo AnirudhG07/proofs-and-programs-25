@@ -7,7 +7,7 @@ pp.unicode.fun = true
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-version = "git#v4.15.0"
+version = "git#v4.19.0-rc3"
 
 [[require]]
 name = "LeanAideTools"
@@ -16,3 +16,10 @@ rev = "main"
 
 [[lean_lib]]
 name = "PfsProgs25"
+
+[[lean_exe]]
+name = "get_type"
+supportInterpreter = true
+
+[[lean_exe]]
+name = "quicksort"

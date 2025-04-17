@@ -1,0 +1,8 @@
+Nat.succ_le_succ
+Nat.zero_le
+Nat.le_zero
+Nat.le_trans
+Eq
+Nat
+Nat.succ
+Int

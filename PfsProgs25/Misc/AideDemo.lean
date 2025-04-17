@@ -12,3 +12,5 @@ set_option leanaide.url  "http://10.134.13.102:7654"
 theorem eg₁ (n: Nat) : 2 ∣ n * (n + 1) := by
   -- #prove
   sorry
+
+#theorem "There are infinitely many odd integers"

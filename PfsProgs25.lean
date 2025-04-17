@@ -14,8 +14,17 @@ import PfsProgs25.Unit07.NatLogic
 import PfsProgs25.Unit08.RecFunction
 import PfsProgs25.Unit09.Trees
 import PfsProgs25.Unit10.BasePoint
+import PfsProgs25.Unit10.Half
 import PfsProgs25.Unit10.Listable
 import PfsProgs25.Unit10.Vec
+import PfsProgs25.Unit11.Fib
+import PfsProgs25.Unit11.Monads
+import PfsProgs25.Unit12.Diophantine
+import PfsProgs25.Unit13.ConstType
+import PfsProgs25.Unit13.CustomSorry
+import PfsProgs25.Unit13.GraphPaths
+import PfsProgs25.Unit13.MetaSolve
+import PfsProgs25.Unit13.NatLE
 /-!
 # Proofs and Programs 2025
 
